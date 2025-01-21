@@ -6,7 +6,11 @@ import java.util.Optional;
 
 public interface UserService {
 
-    UserEntity registerUser(UserEntity user);
+//    UserEntity registerUser(UserEntity user);
 
-    Optional<UserEntity> findByUserName(Long userId);
+    Optional<UserEntity> findByUserName(String username);
+
+    Optional<UserEntity> findById(Long userId);
+
+    void registerUser(UserEntity user);
 }
