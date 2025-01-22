@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -23,6 +24,15 @@ public class UserEntity implements UserDetails {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Column
+    private Timestamp createdAt;
+
+    @Column
+    private Timestamp updatedAt;
+
+    @Column(nullable = false)
+    private boolean deleteFlag;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 
 import com.example.demo.DTO.ChatRoomDTO;
+import com.example.demo.DTO.UserDTO;
 import com.example.demo.entity.ChatroomEntity;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.service.ChatroomService;
@@ -18,7 +19,7 @@ public class ChatRoomController {
     private ChatroomService chatroomService;
 
     @PostMapping("/create")
-    public ResponseEntity<ChatroomEntity> createChatRoom(@RequestParam String name, @RequestBody UserEntity creator) {
+    public ResponseEntity<ChatroomEntity> createChatRoom(@RequestParam String name, @RequestBody UserDTO creator) {
         return ResponseEntity.ok(chatroomService.createChatRoom(name, creator));
     }
 
